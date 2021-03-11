@@ -1,7 +1,6 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import Login from "./app/screens/Login";
 import BottomTabs from "./app/navigation/BottomTabs";
 
 export default function App() {
