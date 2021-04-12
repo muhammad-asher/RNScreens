@@ -1,14 +1,36 @@
 //import liraries
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Image } from "react-native";
 import HomeScreen from "../screens/HomeScreen";
 import { createStackNavigator } from "@react-navigation/stack";
+import { hamburgerIcon, shoppingcartIcon } from "../../assets/icons";
 const Stack = createStackNavigator();
 // create a component
 function HomeStack(props) {
+	const headerLeft = () => {
+		return <Image source={hamburgerIcon} style={styles.leftImage} />;
+	};
+
+	const headerRight = () => {
+		return <Image source={shoppingcartIcon} style={styles.leftImage} />;
+	};
+
 	return (
 		<Stack.Navigator>
-			<Stack.Screen name="Home" component={HomeScreen} />
+			<Stack.Screen
+				name="EKart"
+				component={HomeScreen}
+				options={{
+					title: "EKart",
+					headerLeft: () => headerLeft(),
+					headerRight: () => headerRight(),
+					headerTitleAlign: "left",
+					headerTintColor: "white",
+					headerStyle: {
+						backgroundColor: "#1da1f2",
+					},
+				}}
+			/>
 		</Stack.Navigator>
 	);
 }
@@ -16,6 +38,13 @@ function HomeStack(props) {
 // define your styles
 const styles = StyleSheet.create({
 	container: {},
+	leftImage: {
+		resizeMode: "contain",
+		height: 30,
+		width: 30,
+		marginHorizontal: 10,
+		tintColor: "white",
+	},
 });
 
 //make this component available to the app
