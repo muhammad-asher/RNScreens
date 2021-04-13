@@ -21,7 +21,7 @@ function HomeStack(props) {
 				name="EKart"
 				component={HomeScreen}
 				options={{
-					title: "EKart",
+					title: "Hi, There!",
 					headerLeft: () => headerLeft(),
 					headerRight: () => headerRight(),
 					headerTitleAlign: "left",
